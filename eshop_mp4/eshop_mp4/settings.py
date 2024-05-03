@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'store',
+    'stripe',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -137,3 +139,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51PBax6RrQAMRXLE9m9jHNwcDCcHVtLOtHMJetBUCFuReVwZgb3i2a53EJKXNsucSgwfxJDDDmtwTXoS1EBsZIObS00xBCxFsGW'
+STRIPE_SECRET_KEY = 'sk_test_51PBax6RrQAMRXLE9YP2pEc62zuZK3aWR7cd8qqtJa2WU4uDrf4ooPjcaBQLuI65DUkhTiQ1Y55BC3Mzt7usXhQSL00IrNS52P9'
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
