@@ -45,12 +45,12 @@ Cart
               <br>
               SKU: {{cart_item.product.id}}
               <br>
-              Unit Price: ${{cart_item.product.price}}
+              Unit Price: £{{cart_item.product.price}}
               <br>
               Qty: {{cart_item.quantity}} x {{cart_item.product.price}}
             </td>
             <td>
-              ${{cart_item.sub_total}}
+              £{{cart_item.sub_total}}
             </td>
             {% if cart_item.quantity < cart_item.product.stock %}
             <td>
@@ -86,7 +86,7 @@ Cart
             </tr>
             <tr>
               <td class="text-left">
-                Your total is: <strong>${{total}}</strong>
+                Your total is: <strong>£{{total}}</strong>
               </td>
             </tr>
           </tbody>

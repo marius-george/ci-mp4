@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-mariusgeorge-cimp4-w9kb9ghnp08.ws-eu110.gitpod.io',
+    '8000-mariusgeorge-cimp4-w9kb9ghnp08.ws-eu111.gitpod.io',
     # Add other allowed hosts if needed
 ]
 
@@ -58,7 +59,8 @@ MIDDLEWARE = [
 ]
 
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-mariusgeorge-cimp4-w9kb9ghnp08.ws-eu110.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-mariusgeorge-cimp4-w9kb9ghnp08.ws-eu110.gitpod.io',
+                        'https://8000-mariusgeorge-cimp4-w9kb9ghnp08.ws-eu111.gitpod.io']
 
 
 ROOT_URLCONF = 'eshop_mp4.urls'
