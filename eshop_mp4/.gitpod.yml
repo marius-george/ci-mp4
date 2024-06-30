@@ -1,0 +1,8 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: |
+      sudo service postgresql start
+      python3 manage.py migrate
+    command: python3 manage.py runserver
