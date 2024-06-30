@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,8 +28,7 @@ SECRET_KEY = 'django-insecure-*@es73%uu^eekk)5k5y^db7g4=9ah_o@xqpp8oqixozb_o=z)b
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-mariusgeorge-cimp4-w9kb9ghnp08.ws-eu110.gitpod.io',
-    '8000-mariusgeorge-cimp4-w9kb9ghnp08.ws-eu111.gitpod.io',
+    '8000-mariusgeorge-cimp4-w9kb9ghnp08.ws-eu114.gitpod.io',
     # Add other allowed hosts if needed
 ]
 
@@ -59,8 +59,7 @@ MIDDLEWARE = [
 ]
 
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-mariusgeorge-cimp4-w9kb9ghnp08.ws-eu110.gitpod.io',
-                        'https://8000-mariusgeorge-cimp4-w9kb9ghnp08.ws-eu111.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-mariusgeorge-cimp4-w9kb9ghnp08.ws-eu114.gitpod.io']
 
 
 ROOT_URLCONF = 'eshop_mp4.urls'
@@ -89,12 +88,17 @@ WSGI_APPLICATION = 'eshop_mp4.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+     'default': dj_database_url.parse('postgres://xcukqwdi:sg3BA1z0sqQYH_Xoq-s73stu1MulLzf8@rogue.db.elephantsql.com/xcukqwdi')
+ }
 
 
 # Password validation

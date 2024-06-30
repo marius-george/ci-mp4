@@ -6,45 +6,34 @@ Sign Up
 {% endblock %}
 
 {% block content %}
-
-  <div>
-    {% if not form.is_valid %}
-      <div class="mx-auto">
-        <br>
-        <h1 class="product_title text-center">
-          Create a new account
-        </h1>
-        <br>
-        <div class="col-9 col-sm-9 col-md-6 col-lg-5 mx-auto bg-light">
-          <br>
-          <p>Enter the following information to create a new account</p>
-          <form method="post">
-            {% csrf_token %}
-            <p>{{ form | crispy }}</p>
-            <button type="submit" name="button" class="btn btn-secondary">Sign Up</button>
-          </form>
-          <br>
+<div class="container mt-5">
+    <div class="row justify-content-center align-items-center min-vh-100">
+        <div class="col-md-8 col-lg-6">
+            {% if not form.is_valid %}
+            <div class="card shadow-lg border-0">
+                <div class="card-body p-5">
+                    <h2 class="text-center mb-4">Create a New Account</h2>
+                    <p class="text-center">Enter the following information to create a new account</p>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form | crispy }}
+                        <button type="submit" class="btn btn-success btn-lg w-100">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+            {% else %}
+            <div class="card shadow-lg border-0">
+                <div class="card-body p-5">
+                    <h2 class="text-center mb-4">Your Account Has Been Successfully Created</h2>
+                    <p class="text-center">
+                        Dear Customer,<br><br>
+                        Your account has been created and it is ready to use.<br>
+                        <a href="{% url 'home' %}" class="btn btn-primary mt-3">Continue Shopping</a> and enjoy the variety of products that we have at VintageGadgets.
+                    </p>
+                </div>
+            </div>
+            {% endif %}
         </div>
-      </div>
-    {% else %}
-      <div class="mx-auto">
-        <br>
-        <h1 class="product_title text-center">
-          Your account has been successfully created
-        </h1>
-        <br>
-        <div class="container">
-            <p>
-              Dear Customer,
-              <br>
-              <br>
-              Your account has been created and it is ready to use.
-              <br>
-              <a href="{% url 'home' %}">Continue shopping</a> and enjoy the variety of products that we have at the VintageGadgets.
-            </p>
-        </div>
-      </div>
-
-    {% endif %}
-  </div>
+    </div>
+</div>
 {% endblock %}
