@@ -34,7 +34,7 @@ DEBUG = True
 #     '8000-mariusgeorge-cimp4-9n6d5n7aela.ws.codeinstitute-ide.net',
 #     # Add other allowed hosts if needed
 # ]
-ALLOWED_HOSTS = ['eshop.herokuapp.com', '8000-mariusgeorge-cimp4-9n6d5n7aela.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['eshop-beeae1ba1e24.herokuapp.com', '8000-mariusgeorge-cimp4-9n6d5n7aela.ws.codeinstitute-ide.net']
 
 
 # Application definition
