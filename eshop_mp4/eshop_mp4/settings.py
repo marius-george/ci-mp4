@@ -14,6 +14,9 @@ from pathlib import Path
 import os
 import dj_database_url
 
+if os.path.exists("env.py"):
+  import env
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,11 +30,11 @@ SECRET_KEY = 'django-insecure-*@es73%uu^eekk)5k5y^db7g4=9ah_o@xqpp8oqixozb_o=z)b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    '8000-mariusgeorge-cimp4-w9kb9ghnp08.ws-eu114.gitpod.io',
-    # Add other allowed hosts if needed
-]
-
+# ALLOWED_HOSTS = [
+#     '8000-mariusgeorge-cimp4-9n6d5n7aela.ws.codeinstitute-ide.net',
+#     # Add other allowed hosts if needed
+# ]
+ALLOWED_HOSTS = ['eshop.herokuapp.com', '8000-mariusgeorge-cimp4-9n6d5n7aela.ws.codeinstitute-ide.net']
 
 
 # Application definition
@@ -59,7 +62,10 @@ MIDDLEWARE = [
 ]
 
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-mariusgeorge-cimp4-w9kb9ghnp08.ws-eu114.gitpod.io']
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-mariusgeorge-cimp4-9n6d5n7aela.ws.codeinstitute-ide.net'
+]
+
 
 
 ROOT_URLCONF = 'eshop_mp4.urls'
@@ -95,10 +101,22 @@ WSGI_APPLICATION = 'eshop_mp4.wsgi.application'
 #     }
 # }
 
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'HOST': 'ep-gentle-mountain-a23bxz6h.eu-central-1.aws.neon.tech',
+            'NAME': 'debit_view_squid_982948',
+            'USER': 'u0db5nec08d',
+            'PASSWORD': 'Es0kEg4QDU4Q',
+            'PORT': '',
+        }
+    }
 
-DATABASES = {
-     'default': dj_database_url.parse('postgres://xcukqwdi:sg3BA1z0sqQYH_Xoq-s73stu1MulLzf8@rogue.db.elephantsql.com/xcukqwdi')
- }
 
 
 # Password validation
@@ -152,3 +170,10 @@ STRIPE_SECRET_KEY = 'sk_test_51PBax6RrQAMRXLE9YP2pEc62zuZK3aWR7cd8qqtJa2WU4uDrf4
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
