@@ -34,7 +34,7 @@ DEBUG = True
 #     '8000-mariusgeorge-cimp4-9n6d5n7aela.ws.codeinstitute-ide.net',
 #     # Add other allowed hosts if needed
 # ]
-ALLOWED_HOSTS = ['eshop-beeae1ba1e24.herokuapp.com', '8000-mariusgeorge-cimp4-9n6d5n7aela.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['eshop-beeae1ba1e24.herokuapp.com', '8000-mariusgeorge-cimp4-9n6d5n7aela.ws.codeinstitute-ide.net', '127.0.0.1']
 
 
 # Application definition
@@ -95,28 +95,28 @@ WSGI_APPLICATION = 'eshop_mp4.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'HOST': 'ep-gentle-mountain-a23bxz6h.eu-central-1.aws.neon.tech',
-            'NAME': 'debit_view_squid_982948',
-            'USER': 'u0db5nec08d',
-            'PASSWORD': 'Es0kEg4QDU4Q',
-            'PORT': '',
-        }
-    }
+# if 'DATABASE_URL' in os.environ:
+#     DATABASES = {
+#         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+#     }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'HOST': 'postgresql://neondb_owner:npg_9waGhtg7VEpD@ep-shiny-frost-a2322ygi.eu-central-1.aws.neon.tech/radio_claim_crate_697599',
+#             'NAME': 'debit_view_squid_982948',
+#             'USER': 'u0db5nec08d',
+#             'PASSWORD': 'Es0kEg4QDU4Q',
+#             'PORT': '',
+#         }
+#     }
 
 
 
