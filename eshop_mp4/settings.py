@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-*@es73%uu^eekk)5k5y^db7g4=9ah_o@xqpp8oqixozb_o=z)b'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -34,7 +34,7 @@ DEBUG = True
 #     '8000-mariusgeorge-cimp4-9n6d5n7aela.ws.codeinstitute-ide.net',
 #     # Add other allowed hosts if needed
 # ]
-ALLOWED_HOSTS = ['eshop-beeae1ba1e24.herokuapp.com', '8000-mariusgeorge-cimp4-9n6d5n7aela.ws.codeinstitute-ide.net', '127.0.0.1']
+ALLOWED_HOSTS = ['.herokuapp.com', '8000-mariusgeorge-cimp4-9n6d5n7aela.ws.codeinstitute-ide.net', '127.0.0.1']
 
 
 # Application definition
@@ -95,12 +95,12 @@ WSGI_APPLICATION = 'eshop_mp4.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # if 'DATABASE_URL' in os.environ:
 #     DATABASES = {
@@ -118,6 +118,28 @@ DATABASES = {
 #         }
 #     }
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'radio_claim_crate_697599',
+            'USER': 'neondb_owner',
+            'PASSWORD': 'npg_9waGhtg7VEpD',
+            'HOST': 'ep-shiny-frost-a2322ygi.eu-central-1.aws.neon.tech',
+            'PORT': '5432',  # default PostgreSQL port
+        }
+    }
 
 
 # Password validation
@@ -202,3 +224,10 @@ CSRF_COOKIE_SECURE = True
 
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+
+# Simplified static file serving.
+# https://whitenoise.evans.io/en/stable/
+MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')

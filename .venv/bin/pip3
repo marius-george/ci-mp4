@@ -1,4 +1,4 @@
-#!/Users/mg/Documents/vscode-projects/ci-mp4/.venv/bin/python
+#!/Users/mg/Documents/vscode-projects/ci-mp4/.venv/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -1,1 +1,1 @@
-web: gunicorn eshop_mp4.wsgi:application
+web: gunicorn eshop_mp4.wsgi

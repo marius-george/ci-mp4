@@ -1,6 +1,8 @@
 asgiref==3.8.1
 boto3==1.34.138
 botocore==1.34.138
+certifi==2025.7.9
+charset-normalizer==3.4.2
 contourpy==1.2.1
 crispy==0.7.4
 cycler==0.12.1
@@ -13,18 +15,26 @@ fonttools==4.51.0
 gunicorn==22.0.0
 h5py==3.11.0
 hdf5plugin==4.4.0
+idna==3.10
 jmespath==1.0.1
 kiwisolver==1.4.5
 lxml==5.2.1
 matplotlib==3.8.4
 numpy==1.26.4
+packaging==25.0
 pillow==10.3.0
 psycopg2-binary==2.9.10
 pyparsing==3.1.2
 PyQt5==5.15.11
 PyQt5-Qt5==5.15.11
-PyQt5-sip==12.15, <13
+PyQt5_sip==12.15.0
+python-dateutil==2.9.0.post0
+requests==2.32.4
 s3transfer==0.10.2
 silx==2.1.0
+six==1.17.0
 sqlparse==0.5.0
 stripe==9.4.0
+typing_extensions==4.14.1
+urllib3==2.5.0
+whitenoise==6.9.0
