@@ -1,0 +1,362 @@
+[
+{
+  "model": "auth.group",
+  "fields": {
+    "name": "Customer",
+    "permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$720000$cmIUb95XuezW4B2xA0yllv$d+RC8C9rSmBxGq3Njvq5AIGXH9thWTreyOz6cyT58Kg=",
+    "last_login": "2025-07-15T14:27:44.797Z",
+    "is_superuser": true,
+    "username": "marius",
+    "first_name": "",
+    "last_name": "",
+    "email": "marius.olariu@outlook.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-04-09T17:27:10.546Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$720000$NdKVmcJRo9LMIyu5OlkXjT$EFrdPYu1v5kFnJQR9+WQpPH+F4TWNWIuS7avf9n3n8c=",
+    "last_login": "2024-06-27T19:27:25.561Z",
+    "is_superuser": false,
+    "username": "test",
+    "first_name": "test",
+    "last_name": "test",
+    "email": "test@email.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-05-15T10:43:44.727Z",
+    "groups": [
+      [
+        "Customer"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$720000$rVd5zUHCmJRg2G8QpenKcB$kpSmg7sX8SFMfEW15bAfOn90mHAUO9Mdtgk392VJOIs=",
+    "last_login": "2024-06-25T14:40:32.573Z",
+    "is_superuser": false,
+    "username": "mariuscrispy",
+    "first_name": "mariuscrispy",
+    "last_name": "mariusform",
+    "email": "mariuscrispy@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-06-25T14:40:32.294Z",
+    "groups": [
+      [
+        "Customer"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$720000$HxUdexETq00Xy99EZFhxui$ICByb4KQEIPc1rFyeOxnWyH/UssE4jmZt665SlRrbBA=",
+    "last_login": "2025-05-14T21:56:37.864Z",
+    "is_superuser": false,
+    "username": "test2",
+    "first_name": "test2",
+    "last_name": "test2",
+    "email": "test2@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-05-14T21:56:37.774Z",
+    "groups": [
+      [
+        "Customer"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$720000$m1TUlANxWqudZzFrw5m0up$s5Znuc2vvTcRu2ufCiJdbjQFUwhvHbIKWphbjiQxdEA=",
+    "last_login": "2025-07-13T22:49:12.630Z",
+    "is_superuser": false,
+    "username": "mariusolariu",
+    "first_name": "marius",
+    "last_name": "olariu",
+    "email": "mariusolariu@email.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-06-23T21:53:58.443Z",
+    "groups": [
+      [
+        "Customer"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "store.category",
+  "pk": 1,
+  "fields": {
+    "name": "Mobile",
+    "slug": "mobile",
+    "description": "testing description of categories",
+    "image": "category/logo.jpg"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 2,
+  "fields": {
+    "name": "Samsung",
+    "slug": "samsung",
+    "description": "samsung",
+    "image": "category/samsung_store.jpg"
+  }
+},
+{
+  "model": "store.category",
+  "pk": 3,
+  "fields": {
+    "name": "Apple",
+    "slug": "apple",
+    "description": "apple",
+    "image": "category/applelogo.png"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 1,
+  "fields": {
+    "category": 3,
+    "name": "iPhone X",
+    "slug": "iphone-x",
+    "description": "Elevating mobile experience with its stunning edge-to-edge OLED display, advanced Face ID technology, and powerful A11 Bionic chip, all wrapped in a sleek and premium design.",
+    "price": "999.00",
+    "image": "product/apple-iphone-x-new-1.jpg",
+    "stock": 22,
+    "available": true,
+    "created": "2024-04-09T18:16:12.713Z",
+    "updated": "2024-05-01T14:10:53.580Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 2,
+  "fields": {
+    "category": 2,
+    "name": "Galaxy S10",
+    "slug": "galaxy-s10",
+    "description": "Redefining mobile excellence with its immersive Infinity Display, versatile triple-camera system, and blazing-fast performance, all encased in a sleek and stylish design.",
+    "price": "799.00",
+    "image": "product/samsung-galaxy-s10-1.jpg",
+    "stock": 10,
+    "available": true,
+    "created": "2024-04-09T18:22:11.393Z",
+    "updated": "2024-05-01T14:10:40.093Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 3,
+  "fields": {
+    "category": 3,
+    "name": "iPhone 4",
+    "slug": "iphone-4",
+    "description": "Iconic design, groundbreaking Retina display, and powerful performance, all in a compact and stylish package.",
+    "price": "499.00",
+    "image": "product/apple-iphone-4-ofic-2.jpg",
+    "stock": 10,
+    "available": true,
+    "created": "2024-04-09T18:23:45.881Z",
+    "updated": "2024-05-01T14:10:42.839Z"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 4,
+  "fields": {
+    "category": 2,
+    "name": "Galaxy S8",
+    "slug": "galaxy-s8",
+    "description": "Experience stunning visuals on the Infinity Display, capture moments in clarity with its advanced camera, and enjoy seamless performance in a sleek and ergonomic design.",
+    "price": "799.00",
+    "image": "product/samsung-galaxy-s8-.jpg",
+    "stock": 10,
+    "available": true,
+    "created": "2024-04-09T18:24:57.266Z",
+    "updated": "2024-05-01T14:10:47.250Z"
+  }
+},
+{
+  "model": "store.cart",
+  "pk": 1,
+  "fields": {
+    "cart_id": "xh21nqtsx7cz14wg3bx4eot9pfibdfdm",
+    "date_added": "2024-04-21"
+  }
+},
+{
+  "model": "store.cart",
+  "pk": 2,
+  "fields": {
+    "cart_id": "aad3dfgmn099ehnphej555q75d007op8",
+    "date_added": "2024-04-22"
+  }
+},
+{
+  "model": "store.cart",
+  "pk": 3,
+  "fields": {
+    "cart_id": "xrvwp60iz1cfywckyunynma693x2hm0c",
+    "date_added": "2024-05-01"
+  }
+},
+{
+  "model": "store.cart",
+  "pk": 4,
+  "fields": {
+    "cart_id": "rtoyglzk8hgexe3qfanu10j37mcnuo1q",
+    "date_added": "2024-05-03"
+  }
+},
+{
+  "model": "store.cart",
+  "pk": 5,
+  "fields": {
+    "cart_id": "6apsu24m45uyugoze25l2jmzay9d3sjx",
+    "date_added": "2024-05-15"
+  }
+},
+{
+  "model": "store.cart",
+  "pk": 6,
+  "fields": {
+    "cart_id": "l4dvtmpftqx21gqbbw85a4a2yym5b8q0",
+    "date_added": "2024-05-23"
+  }
+},
+{
+  "model": "store.cart",
+  "pk": 7,
+  "fields": {
+    "cart_id": "3552unwutl55ru1gn9dolkt1d7hqjtn4",
+    "date_added": "2024-06-26"
+  }
+},
+{
+  "model": "store.cart",
+  "pk": 8,
+  "fields": {
+    "cart_id": "s61yxyiy3nzd9d7sdjyaew2kq40hd2cs",
+    "date_added": "2024-06-27"
+  }
+},
+{
+  "model": "store.cart",
+  "pk": 9,
+  "fields": {
+    "cart_id": "992qmwzlkuioeu0e069ftzy5c9ha1oae",
+    "date_added": "2024-06-29"
+  }
+},
+{
+  "model": "store.cart",
+  "pk": 10,
+  "fields": {
+    "cart_id": "sbvj22xzcwrssvi3ygimt8shfeq98jlq",
+    "date_added": "2025-05-14"
+  }
+},
+{
+  "model": "store.cart",
+  "pk": 11,
+  "fields": {
+    "cart_id": "3kvrdwyq7l8atneb93ltkpp3lwdn5vn1",
+    "date_added": "2025-06-23"
+  }
+},
+{
+  "model": "store.cartitem",
+  "pk": 3,
+  "fields": {
+    "product": 2,
+    "cart": 2,
+    "quantity": 4,
+    "active": true
+  }
+},
+{
+  "model": "store.cartitem",
+  "pk": 4,
+  "fields": {
+    "product": 1,
+    "cart": 2,
+    "quantity": 2,
+    "active": true
+  }
+},
+{
+  "model": "store.cartitem",
+  "pk": 11,
+  "fields": {
+    "product": 1,
+    "cart": 3,
+    "quantity": 1,
+    "active": true
+  }
+},
+{
+  "model": "store.cartitem",
+  "pk": 17,
+  "fields": {
+    "product": 2,
+    "cart": 5,
+    "quantity": 1,
+    "active": true
+  }
+},
+{
+  "model": "store.cartitem",
+  "pk": 18,
+  "fields": {
+    "product": 3,
+    "cart": 6,
+    "quantity": 2,
+    "active": true
+  }
+},
+{
+  "model": "store.cartitem",
+  "pk": 21,
+  "fields": {
+    "product": 2,
+    "cart": 9,
+    "quantity": 1,
+    "active": true
+  }
+},
+{
+  "model": "store.cartitem",
+  "pk": 23,
+  "fields": {
+    "product": 3,
+    "cart": 11,
+    "quantity": 2,
+    "active": true
+  }
+}
+]
