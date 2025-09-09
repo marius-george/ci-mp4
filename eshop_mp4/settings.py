@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'b1oej^%_=*t22903_gz_ss1n*4o8%yus7@!ias77ij-td93m)*'
 
-DEBUG = True  # set False in production
+DEBUG = False  # set False in production
 
 ALLOWED_HOSTS = [
     '.herokuapp.com',
@@ -27,7 +27,7 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-mariusgeorge-cimp4-9n6d5n7aela.ws.codeinstitute-ide.net',
+    'https://eshop-mp4-502a44cdcfd1.herokuapp.com/',
 ]
 
 # --- Apps ---
