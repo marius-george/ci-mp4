@@ -98,9 +98,9 @@ DATABASES = {
 
 
 
-if os.environ.get("DATABASE_URL"):
+# if os.environ.get("DATABASE_URL"):
     
-    DATABASES["postgres"] = dj_database_url.parse(os.environ["DATABASE_URL"], conn_max_age=600, ssl_require=True)
+#     DATABASES["postgres"] = dj_database_url.parse(os.environ["DATABASE_URL"], conn_max_age=600, ssl_require=True)
 
 # --- Password validation ---
 AUTH_PASSWORD_VALIDATORS = [
