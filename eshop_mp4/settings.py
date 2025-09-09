@@ -15,7 +15,7 @@ if os.path.exists("env.py"):
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY = 'b1oej^%_=*t22903_gz_ss1n*4o8%yus7@!ias77ij-td93m)*'
+SECRET_KEY = os.environ["SECRET_KEY"]
 
 DEBUG = False  # set False in production
 
@@ -27,7 +27,7 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://eshop-mp4-502a44cdcfd1.herokuapp.com/',
+    'https://eshop-mp4-502a44cdcfd1.herokuapp.com',
 ]
 
 # --- Apps ---
