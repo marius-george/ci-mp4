@@ -76,6 +76,24 @@ def cart_detail(request, total=0, counter=0, cart_items=None):
     stripe_total = int(total * 100)
     description = 'VintageGadgets - Order'
     data_key = settings.STRIPE_PUBLISHABLE_KEY
+    if request.method == 'POST':
+        try:
+            token = request.POST['stripeToken']
+            email = request.POST['stripeEmail']
+            customer = stripe.Customer.create(
+                email=email,
+                source=token
+            )
+            charge = stripe.Charge.create(
+                amount=stripe_total,
+                currency='gbp',
+                description=description,
+                customer=customer.id
+
+            )
+        except stripe.error.CardError as e:
+            return False, e
+    
 
     return render(request, 'cart.html', dict(cart_items=cart_items, total=total, counter=counter, data_key=data_key, stripe_total=stripe_total, description=description))
 
