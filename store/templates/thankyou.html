@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Order confirmed — E Shop{% endblock %}
+
+{% block content %}
+
+<header class="bg-dark py-5" style="background-image: url('{% static 'img/banner.png' %}'); background-size: cover; background-position: center;" >
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">eShop</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Find your perfect phone!</p>
+        </div>
+    </div>
+</header>
+
+
+<div class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-4 p-md-5 text-center">
+            <div class="display-3 mb-3">
+              <i class="bi bi-check-circle text-success"></i>
+            </div>
+
+            <h1 class="h3 mb-2">Thank you for your order!</h1>
+            <p class="text-muted mb-4">
+              We've emailed your receipt and will notify you when your items are on the way.
+            </p>
+
+            <div class="alert alert-light border d-inline-block text-start">
+              <div class="fw-semibold">Order number</div>
+              <div class="fs-5"><code>#{{ customer_order.id }}</code></div>
+            </div>
+
+            {% if customer_order.created %}
+              <p class="mb-0 small text-muted">
+                Placed on {{ customer_order.created|date:"F j, Y, g:i a" }}
+              </p>
+            {% endif %}
+
+            <div class="d-grid d-sm-flex gap-2 justify-content-center mt-4">
+              <a href="/" class="btn btn-primary">Continue shopping</a>
+
+              {# Try to reverse the order detail URL; if it fails, omit the button #}
+              {% if customer_order %}
+                {% url 'orders:detail' customer_order.id as order_detail_url %}
+                {% if order_detail_url %}
+                  <a href="{{ order_detail_url }}" class="btn btn-outline-secondary">View order</a>
+                {% endif %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <p class="text-center text-muted mt-3 mb-0 small">
+          Need help? <a href="/contact" class="link-secondary">Contact support</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

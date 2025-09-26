@@ -12,4 +12,5 @@ urlpatterns = [
     path('account/create/', views.signupView, name='signup'),
     path('account/signin/', views.signinView, name='signin'),
     path('account/signout/', views.signoutView, name='signout'),
+    path('thankyou/<int:order_id>', views.thankyou_page, name='thankyou_page'),
 ]
