@@ -1,3 +1,4 @@
+from decimal import Decimal, ROUND_HALF_UP
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, Http404
 from .models import Category, Product, Cart, CartItem, Order, OrderItem
@@ -153,7 +154,7 @@ def cart_detail(request, total=0, counter=0, cart_items=None):
             stripe_total=stripe_total,
             description=description
         )
-    )
+    ) #cart_detail care merge pe web si nu pe mobil
 
 
 def cart_remove(request, product_id):
