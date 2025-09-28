@@ -30,6 +30,13 @@ CSRF_TRUSTED_ORIGINS = [
     'https://eshop-mp4-502a44cdcfd1.herokuapp.com',
 ]
 
+
+CSP_FRAME_ANCESTORS = (
+    "'self'",
+    "https://ui.dev",            # Am I Responsive
+    # add others if needed, e.g. "https://partner.example.com", "https://*.yourdomain.com"
+)
+
 # --- Apps ---
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -52,7 +59,8 @@ INSTALLED_APPS = [
 # --- Middleware ---
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'csp.middleware.CSPMiddleware',  
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -164,3 +172,5 @@ STRIPE_SECRET_KEY = 'sk_test_51PBax6RrQAMRXLE9YP2pEc62zuZK3aWR7cd8qqtJa2WU4uDrf4
 
 # --- Defaults ---
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+X_FRAME_OPTIONS = "ALLOWALL"
