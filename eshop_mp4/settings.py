@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     # local
     'store',
     'stripe',
+    'csp',
 ]
 
 # --- Middleware ---
